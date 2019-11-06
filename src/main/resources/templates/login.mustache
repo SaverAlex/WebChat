@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<h1>Login Page</h1>
+<form action="/login" method="post">
+    <div><label> User name: <input type="text" name="username" placeholder="Введите логин" /></label></div>
+    <div><label> Password: <input type="password" name="password" placeholder="Введите пароль" /></label></div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+<a href="/registration">Add new user</a>
+</body>
+</html>
