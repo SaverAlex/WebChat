@@ -5,10 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Главная страница</h1>
+<h1>Добро пожаловать, {{username}}!</h1>
 <form  action="/logout" method="post">
     <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
     <input type="submit" value="Sign Out"/>
+</form>
+<h3>Чат</h3>
+{{#messages}}
+<div>
+    <b>{{name}}:</b>
+    <span>{{message}}</span>
+</div>
+{{/messages}}
+<form action="/main" method="post">
+    <div><label><input type="text" name="message" placeholder=""/></label>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <input type="submit" value="Отправить"/></div>
 </form>
 </body>
 </html>
