@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/styles/login.css">
+    <title>Login</title>
+</head>
 <body>
-<h1>Login Page</h1>
-<form action="/login" method="post">
-    <div><label> User name: <input type="text" name="username" placeholder="Введите логин" /></label></div>
-    <div><label> Password: <input type="password" name="password" placeholder="Введите пароль" /></label></div>
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-    <div><input type="submit" value="Sign In"/></div>
-</form>
-<a href="/registration">Add new user</a>
+<div class="page">
+    <div class="page__content">
+        <header>
+            <h1>Login Page</h1>
+        </header>
+        <main>
+            <form action="/login" method="post">
+                <fieldset>
+                    <label> <span>User name:</span> <input type="text" name="username"
+                                                           placeholder="Введите логин"/></label>
+                    <label> <span>Password:</span> <input type="password" name="password" placeholder="Введите пароль"/></label>
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                    <input type="submit" value="Sign In"/>
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <span><a href="/registration">Add new user</a></span>
+        </footer>
+    </div>
+</div>
 </body>
 </html>
