@@ -2,19 +2,40 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Main page</title>
+    <link rel="stylesheet" type="text/css" href="../styles/greeting.css">
 </head>
 <body>
-<h1>Главная страница</h1>
-<h3>{{variableName}}</h3>
-{{#users}}
-<div>
-    <b>{{id}}</b>
-    <span>{{username}}</span>
-    <i>{{password}}</i>
+<div class="page">
+    <div class="page__content">
+        <header>
+            <section>
+                <h1>Main page</h1>
+                <h3>{{variableName}}</h3>
+            </section>
+        </header>
+        <main>
+            <section>
+                {{#users}}
+                <ul>
+                    <li>
+                        <b>{{id}}</b>
+                        <span>{{username}}</span>
+                        <i>{{password}}</i>
+                    </li>
+                </ul>
+                {{/users}}
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="/main">Main page</a></li>
+                    <li><a href="/login">Login page</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
 </div>
-{{/users}}
-<div><a href="/main">Main page</a></div>
-<div><a href="/login">Login page</a></div>
 </body>
 </html>
