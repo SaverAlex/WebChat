@@ -50,6 +50,6 @@ public class MainController {
         //String username = auth.getName();
         model.put("username", sender.getUsername());
         model.put("messages", messages);
-        return "main";
+        return "redirect:/main";
     }
 }

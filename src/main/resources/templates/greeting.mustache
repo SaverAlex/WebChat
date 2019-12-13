@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
-    <link rel="stylesheet" type="text/css" href="../static/styles/greeting.css">
+    <link rel="stylesheet" type="text/css" href="../styles/greeting.css">
 </head>
 <body>
 <div class="page">
@@ -17,11 +17,13 @@
         <main>
             <section>
                 {{#users}}
-                    <div>
+                <ul>
+                    <li>
                         <b>{{id}}</b>
                         <span>{{username}}</span>
                         <i>{{password}}</i>
-                    </div>
+                    </li>
+                </ul>
                 {{/users}}
             </section>
         </main>
