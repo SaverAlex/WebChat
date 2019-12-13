@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Web chat</title>
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 <h1>Добро пожаловать, {{username}}!</h1>
-<form  action="/logout" method="post">
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
     <input type="submit" value="Sign Out"/>
 </form>
 <h3>Чат</h3>
-{{#messages}}
-<div>
-    <b>{{name}}:</b>
-    <span>{{message}}</span>
-</div>
-{{/messages}}
+<main class="chat">
+    {{#messages}}
+        <div>
+            <b>{{name}}:</b>
+            <span>{{message}}</span>
+        </div>
+    {{/messages}}
+</main>
 <form action="/main" method="post">
     <div><label><input type="text" name="message" placeholder=""/></label>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         <input type="submit" value="Отправить"/></div>
 </form>
 </body>
