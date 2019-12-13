@@ -1,4 +1,3 @@
-const fetch = require("node-fetch");
 const URL = "http://localhost:8080/session";
 const PING_INTERVAL = 1000;
 
@@ -17,4 +16,10 @@ const updateChat = async () => {
     }
 };
 
-setInterval(updateChat, PING_INTERVAL);
+//setInterval(updateChat, PING_INTERVAL);
+
+setInterval(()=>{
+    const xhr = new XMLHttpRequest();
+     xhr.open("GET", URL, false);
+     xhr.send();
+     console.info("Ping!")},PING_INTERVAL);
