@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
-    <link rel="stylesheet" type="text/css" href="../styles/greeting.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/greeting.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
 <div class="page">
     <div class="page__content">
         <header>
-            <section>
-                <h1>Main page</h1>
-                <h3>{{variableName}}</h3>
-            </section>
+            <nav class="nav-block yellow darken-3">
+                <div><a href="/main">Main page</a></div>
+                <div><a href="/login">Login page</a></div>
+            </nav>
+            <div class="header__info">
+                <p>
+                    Welcome to our chat! It is still under development, so if you have any problems, please contact us!
+                </p>
+                <p>
+                    The following users are currently registered in our chat:
+                </p>
+            </div>
         </header>
         <main>
-            <section>
-                {{#users}}
-                    <ul>
-                        <li>
-                            <b>{{id}}</b>
-                            <span>{{username}}</span>
-                            <i>{{password}}</i>
-                        </li>
-                    </ul>
-                {{/users}}
-            </section>
-        </main>
-        <footer>
-            <nav>
+            {{#users}}
                 <ul>
-                    <li><a href="/main">Main page</a></li>
-                    <li><a href="/login">Login page</a></li>
+                    <li>
+                        <b>{{id}}</b>
+                        <span>{{username}}</span>
+                        <span>{{password}}</span>
+                    </li>
                 </ul>
-            </nav>
-        </footer>
+            {{/users}}
+        </main>
     </div>
 </div>
 </body>
