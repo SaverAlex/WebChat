@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
-    <link rel="stylesheet" type="text/css" href="../styles/login.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
@@ -28,13 +28,11 @@
                 /><label for="password">Password</label>
             </div>
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-
             <div class="main">
                 <button class="waves-effect waves-light btn yellow darken-3 main__button" type="submit">Sign In
                 </button>
             </div>
         </form>
-
     </main>
 </div>
 </body>
