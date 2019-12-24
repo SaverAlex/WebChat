@@ -5,15 +5,27 @@
     <title>Web chat</title>
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="../js/updatingChat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-<h1>Добро пожаловать, {{username}}!</h1>
-<form action="/logout" method="post">
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-    <input type="submit" value="Sign Out"/>
-</form>
-<h3>Чат</h3>
+<div class="page">
+    <div class="page__content">
+        <header>
+            <nav class="nav-block yellow darken-3">
+                <div>Chat</div>
+                <div>
+                    {{username}}
+                    <form action="/logout" method="post">
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                        <button class="waves-effect waves-light btn yellow darken-3 main__button" type="submit">
+                            LogOut
+                        </button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+    </div>
+</div>
 <main class="chat">
     {{#messages}}
         <div>
@@ -22,10 +34,17 @@
         </div>
     {{/messages}}
 </main>
-<form action="/main" method="post">
-    <div><label><input type="text" name="message" placeholder=""/></label>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-        <input type="submit" value="Отправить"/></div>
+<form action="/main" method="post" class="message-block">
+    <div class="input-field">
+        <input class="input-field" id="message" type="text" name="message"
+        /><label for="message">Message</label>
+    </div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    <div class="main">
+        <button class="waves-effect waves-light btn yellow darken-3 main__button" type="submit">
+            Send
+        </button>
+    </div>
 </form>
 </body>
 </html>
