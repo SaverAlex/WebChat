@@ -1,5 +1,5 @@
 const URL = "http://localhost:8080/session";
-const PING_INTERVAL = 2000;
+const PING_INTERVAL = 300;
 
 setInterval(function (){
     const xhr = new XMLHttpRequest();
