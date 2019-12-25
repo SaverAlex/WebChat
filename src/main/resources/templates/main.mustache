@@ -27,13 +27,15 @@
         </header>
     </div>
 </div>
-<main class="chat">
-    {{#messages}}
+<main>
+    <div class="chat">
+        {{#messages}}
         <div>
             <b>{{name}}:</b>
             <span>{{message}}</span>
         </div>
-    {{/messages}}
+        {{/messages}}
+    </div>
 </main>
 <form action="/main" method="post" class="message-block">
     <div class="input-field">

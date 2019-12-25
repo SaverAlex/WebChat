@@ -17,6 +17,14 @@ a {
     padding-top: 15%;
 }
 
+.chat {
+    margin: auto;
+    overflow-y: scroll;
+    height: 500px;
+    padding: 100px;
+    text-align: left;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
