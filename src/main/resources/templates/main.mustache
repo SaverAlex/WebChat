@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Web chat</title>
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
@@ -26,18 +26,20 @@
         </header>
     </div>
 </div>
-<main class="chat">
-    {{#messages}}
-        <div>
-            <b>{{name}}:</b>
-            <span>{{message}}</span>
-        </div>
-    {{/messages}}
+<main>
+    <div class="chat">
+        {{#messages}}
+            <div>
+                <b>{{name}}:</b>
+                <span>{{message}}</span>
+            </div>
+        {{/messages}}
+    </div>
 </main>
 <form action="/main" method="post" class="message-block">
     <div class="input-field">
-        <input class="input-field" id="message" type="text" name="message"
-        /><label for="message">Message</label>
+        <textarea placeholder="Message" class="input-field" id="message" name="message"
+        ></textarea>
     </div>
     <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
     <div class="main">
