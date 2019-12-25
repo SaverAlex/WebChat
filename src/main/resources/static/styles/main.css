@@ -47,7 +47,6 @@ main {
     text-align: center;
     font-size: 25px;
     padding-top: 50px;
-    display: flex !important;
 }
 
 /* label color */
@@ -71,12 +70,4 @@ main {
 
 .message-block {
     padding: 50px;
-}
-
-.chat {
-    margin: auto;
-    overflow-y: scroll;
-    height: 500px;
-    padding: 100px;
-    text-align: left;
 }
