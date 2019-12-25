@@ -46,7 +46,6 @@ public class MainController {
         User sender = userRepo.findByUsername(auth.getName());
         Message messageEntity = new Message(sender.getUsername(),message,sender.getId());
 
-        Response.updateNewMessageArray(sender,message);
 
         messageRepo.save(messageEntity);
         Iterable<Message> messages = messageRepo.findAll();

@@ -5,6 +5,8 @@ import com.example.WebChat.repos.MessageRepo;
 import com.example.WebChat.repos.UserRepo;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +23,7 @@ public class SessionController {
     @RequestMapping(path="/session", method= RequestMethod.GET)
     @ResponseBody
     public JSONObject doLogin() {
-        JSONObject result = Response.generateResponse(Response.newMessageArrayList);
-        return result;
+        return new Response().generateResponse(messageRepo);
     }
 
 
